@@ -58,6 +58,10 @@ Please ensure you have these installed before running the script.
 - The search is case-insensitive, so "SUGAR" and "sugar" will be treated the same.
 - The script checks for the presence of ALL input ingredients in a recipe. If a recipe contains some but not all the ingredients, it won't be returned.
 
+## Ackowledgements
+
+This script uses the Coding Nomads recipe collection: `https://codingnomads.github.io/recipes/`.
+
 ## Feedback and Contribution
 
 For any feedback or contributions to this script, please open a pull request or raise an issue in this repository.

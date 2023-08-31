@@ -36,30 +36,37 @@ def get_user_ingredients():
     return ingredient_list
 
 def scrape_website(URL):
-    """Scrape a website and save the response to a local html file
+    """Scrape a website
 
     Args:
         URL (str): URL for website to scrape
     """
     # Send a GET request to the URL
     response = requests.get(URL)
-
+    
     # Check if the request was successful
     if response.status_code == 200:
         # Get the HTML content
         html_content = response.text
-
-        # Save the extracted content into a text file
-        with open ('scraped_content.html', 'w') as file:
-            file.write(html_content)
-
         print('Scraping successful. The content has been saved to "scraped_content.html"')
+        
     else:
         print('Error: Failed to retrieve the web page')
+        SystemExit()
+
+    return html_content
+
+def save_to_file (html_content):
+    """Save extracted conent into a text file.
+
+    Args:
+        html_content (html): html from website
+    """
+    with open ('scraped_content.html', 'w') as file:
+            file.write(html_content)
 
 
 # Get links for each website and then scrape each website to find matching ingredients
-
 def get_links (URL):
     """Get links for each website and then scrape each website to find matching ingredients
 
@@ -115,7 +122,10 @@ if __name__ == "__main__":
     user_ingredient_list = get_user_ingredients() 
 
     # Scrape website and save html to a file, only need to do once
-    # scrape_website(URL)
+    html_content = scrape_website(URL)
+
+    # Save content to an html file
+    save_to_file(html_content)
 
     # Get all recipe links on the page
     recipe_link_list = get_links(URL) 

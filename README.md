@@ -13,7 +13,7 @@ This script allows a user to input ingredients they have on hand and returns rec
 
 ### Prerequisites
 
-Ensure you have Python and the requests, time and BeautifulSoup libraries installed.
+Ensure you have Python and the requests, time and BeautifulSoup libraries are installed.
 
 ```bash
 pip install requests
@@ -24,7 +24,7 @@ pip install time
 ```
 
 ```bash
-pip install BeautifulSoup
+pip install bs4
 ```
 
 ### How to Run 
@@ -34,9 +34,6 @@ To run the script, execute the following command:
 ```bash
 python Recipe_Scrape.py
 ```
-
-
-Replace `<name_of_script>` with the name you've saved the script as.
 
 ## Instructions
 
